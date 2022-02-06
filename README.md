@@ -1,6 +1,6 @@
-# su-hw-challenge
+# cypress Api Automation
 
-A coding challenge for the Hardware Tribe.
+A coding challenge for  learning 
 
 ## Requirements
 
