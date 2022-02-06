@@ -1,0 +1,25 @@
+{
+  "message": "user generated",
+  "user": {
+    "country": "DE",
+    "personal_profile": {
+      "first_name": "Lotta",
+      "last_name": "Albrecht",
+      "date_of_birth": "1998-07-10T00:00:00.000Z",
+      "mobile_phone": "+491603787088",
+      "national_id": "T220001293"
+    },
+    "address": {
+      "country": "DE",
+      "address_line1": "210 Caroline Inlet",
+      "address_line2": "",
+      "city": "Baumeisterburg",
+      "post_code": "59147",
+      "region_name": "Rheinland-Pfalz",
+      "landline": "+491603787088",
+      "first_name": "Lotta",
+      "last_name": "Albrecht",
+      "company": "Umbrella Corp. de"
+    }
+  }
+}

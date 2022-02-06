@@ -1,0 +1,303 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 10,
+    "passes": 9,
+    "pending": 0,
+    "failures": 1,
+    "start": "2021-07-11T18:19:18.691Z",
+    "end": "2021-07-11T18:19:22.573Z",
+    "duration": 3882,
+    "testsRegistered": 10,
+    "passPercent": 90,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "e1778efa-bcb8-4f19-81fa-2b51cd735119",
+      "title": "",
+      "fullFile": "cypress/integration/Users/step_definations/api_.spec.js",
+      "file": "cypress/integration/Users/step_definations/api_.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "3c599363-7240-48c8-9b1f-0baeb60f8340",
+          "title": "Verfiy Get api  request",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Navigate to  Api Url ",
+              "fullTitle": "Verfiy Get api  request Navigate to  Api Url ",
+              "timedOut": null,
+              "duration": 305,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request(\"GET\", \"http://localhost:3000/\").then(function (response) {\n  expect(response.body).to.have.property(\"message\", \"hello\");\n});",
+              "err": {},
+              "uuid": "66811cb3-4ea8-4bec-8e07-b18c5e854fb7",
+              "parentUUID": "3c599363-7240-48c8-9b1f-0baeb60f8340",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify correct HTTP status code.",
+              "fullTitle": "Verfiy Get api  request Verify correct HTTP status code.",
+              "timedOut": null,
+              "duration": 122,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request(\"GET\", \"http://localhost:3000/\").then(function (response) {\n  expect(response.status).to.eq(200);\n});",
+              "err": {},
+              "uuid": "b84fa152-1a6e-4d33-a1ac-888eddfd74dd",
+              "parentUUID": "3c599363-7240-48c8-9b1f-0baeb60f8340",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "66811cb3-4ea8-4bec-8e07-b18c5e854fb7",
+            "b84fa152-1a6e-4d33-a1ac-888eddfd74dd"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 427,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "a2b7b85f-5207-4875-8289-1ecaf2c6e9fb",
+          "title": "Verfiy Post api  request",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify POST request ",
+              "fullTitle": "Verfiy Post api  request Verify POST request ",
+              "timedOut": null,
+              "duration": 241,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request(\"POST\", \"http://localhost:3000/generate\", code).then(function (response) {\n  expect(response.body).has.property(\"message\", \"user generated\");\n});",
+              "err": {},
+              "uuid": "a8af1f9f-09d9-4ed7-8944-21c26bf71d68",
+              "parentUUID": "a2b7b85f-5207-4875-8289-1ecaf2c6e9fb",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify correct HTTP status code.",
+              "fullTitle": "Verfiy Post api  request Verify correct HTTP status code.",
+              "timedOut": null,
+              "duration": 106,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//const code = { locale: \"DE\" };\ncy.request(\"POST\", \"http://localhost:3000/generate\", code).then(function (response) {\n  expect(response.status).to.eq(200);\n  expect(response.duration).to.not.be.greaterThan(1000);\n});",
+              "err": {},
+              "uuid": "a75dc574-645f-49cc-bbe0-a805352822c1",
+              "parentUUID": "a2b7b85f-5207-4875-8289-1ecaf2c6e9fb",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify Content-Type is present",
+              "fullTitle": "Verfiy Post api  request Verify Content-Type is present",
+              "timedOut": null,
+              "duration": 89,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//const code = { locale: \"DE\" };\ncy.request(\"POST\", \"http://localhost:3000/generate\", code).its(\"headers\").its(\"content-type\").should(\"include\", \"application/json\");",
+              "err": {},
+              "uuid": "2a733338-81ba-40ac-ae79-b378116eb7a5",
+              "parentUUID": "a2b7b85f-5207-4875-8289-1ecaf2c6e9fb",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify  Response time is less than 200ms",
+              "fullTitle": "Verfiy Post api  request Verify  Response time is less than 200ms",
+              "timedOut": null,
+              "duration": 69,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//const code = { locale: \"DE\" };\ncy.request(\"POST\", \"http://localhost:3000/generate\", code).then(function (response) {\n  expect(response.duration).to.not.be.greaterThan(1000);\n});",
+              "err": {},
+              "uuid": "d9fef908-35e8-4f26-97e8-53acaa7ad5cf",
+              "parentUUID": "a2b7b85f-5207-4875-8289-1ecaf2c6e9fb",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify response header ",
+              "fullTitle": "Verfiy Post api  request Verify response header ",
+              "timedOut": null,
+              "duration": 71,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//const code = { locale: \"DE\" };\ncy.request(\"POST\", \"http://localhost:3000/generate\", code).then(function (response) {\n  expect(response).to.have.property(\"headers\");\n});",
+              "err": {},
+              "uuid": "57a5e361-308f-4ddf-8596-bfbce4fd85b4",
+              "parentUUID": "a2b7b85f-5207-4875-8289-1ecaf2c6e9fb",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Body is not blanck ",
+              "fullTitle": "Verfiy Post api  request Body is not blanck ",
+              "timedOut": null,
+              "duration": 92,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//const code = { locale: \"DE\" };\ncy.request(\"POST\", \"http://localhost:3000/generate\", code).then(function (response) {\n  expect(response).to.not.be[\"null\"];\n});",
+              "err": {},
+              "uuid": "54339dea-64d8-4ae8-a34c-bbfd8ea9569c",
+              "parentUUID": "a2b7b85f-5207-4875-8289-1ecaf2c6e9fb",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify  Post Api response object and mandatory fileds",
+              "fullTitle": "Verfiy Post api  request Verify  Post Api response object and mandatory fileds",
+              "timedOut": null,
+              "duration": 2145,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "//const code = { locale: \"DE\" };\ncy.request(\"POST\", \"http://localhost:3000/generate\", code).then(function (response) {\n  var userData = response.body.user; //validates Objects {user,address,personal_profile}\n  expect(response.body).to.have.property(\"user\");\n  expect(userData).to.have.property(\"address\");\n  expect(userData).to.have.property(\"personal_profile\"); // validate object(personal_profile) fields {first_name,last_name,date_of_birth,mobile_phone,national_id}\n  var personalProfile = userData.personal_profile;\n  expect(personalProfile).to.have.property(\"first_name\").to.not.be[\"null\"];\n  expect(personalProfile).to.have.property(\"last_name\").to.not.be[\"null\"];\n  expect(personalProfile).to.have.property(\"date_of_birth\").to.not.be[\"null\"];\n  expect(personalProfile).to.have.property(\"mobile_phone\").to.not.be[\"null\"];\n  expect(personalProfile.mobile_phone).to.not.equal(\"---------\");\n  var mobileNumber = personalProfile.mobile_phone;\n  expect(mobileNumber).to.have.lengthOf(13);\n  expect(response.body.user.personal_profile).to.have.property(\"national_id\");\n  expect(response.body.user.address).to.have.property(\"address_line2\").to.not.be[\"null\"]; //expect(response.body).to.eq({ message: \"user generated\" });\n  //expect(response.body).to.have.keys(\"country\");\n  //expect(response.body.user.personal_profile.first_name).to.eq(\n  //response.body.user.personal_profile.first_name);\n  //expect(response.body.user.address.address_line2).to.not.be.null;\n  //expect(response.body.user.country).to.eq(response.body.user.country);\n  //expect(response.body.user.personal_profile.first_name).has.property(\n  //\"first_name\",\n  //response.body.user.personal_profile.first_name\n  //);\n});",
+              "err": {
+                "message": "AssertionError: expected '+13405988330' to have a length of 13 but got 12",
+                "estack": "AssertionError: expected '+13405988330' to have a length of 13 but got 12\n    at Context.eval (http://localhost:63967/__cypress/tests?p=cypress/integration/Users/step_definations/api_.spec.js:73:36)",
+                "diff": "- 12\n+ 13\n"
+              },
+              "uuid": "feed81df-f90f-4969-a29d-30d7e497e901",
+              "parentUUID": "a2b7b85f-5207-4875-8289-1ecaf2c6e9fb",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Body is not blanck ",
+              "fullTitle": "Verfiy Post api  request Body is not blanck ",
+              "timedOut": null,
+              "duration": 158,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//const code = { locale: \"DE\" };\ncy.request(\"POST\", \"http://localhost:3000/generate\", code).then(function (response) {\n  expect(response).to.not.be[\"null\"];\n});",
+              "err": {},
+              "uuid": "8e9c0c36-28c9-4895-af77-d96a425d7f47",
+              "parentUUID": "a2b7b85f-5207-4875-8289-1ecaf2c6e9fb",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "a8af1f9f-09d9-4ed7-8944-21c26bf71d68",
+            "a75dc574-645f-49cc-bbe0-a805352822c1",
+            "2a733338-81ba-40ac-ae79-b378116eb7a5",
+            "d9fef908-35e8-4f26-97e8-53acaa7ad5cf",
+            "57a5e361-308f-4ddf-8596-bfbce4fd85b4",
+            "54339dea-64d8-4ae8-a34c-bbfd8ea9569c",
+            "8e9c0c36-28c9-4895-af77-d96a425d7f47"
+          ],
+          "failures": [
+            "feed81df-f90f-4969-a29d-30d7e497e901"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 2971,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}
